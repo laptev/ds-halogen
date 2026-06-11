@@ -1,0 +1,31 @@
+{
+  "name": "@laptev/ds-halogen",
+  "version": "0.4.0",
+  "description": "Halogen — AI-first design system. Dark-mode-first, high-density UI for creative software, shaped for fast MVP vibe coding.",
+  "bin": {
+    "ds-halogen": "bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "assets",
+    "index.html",
+    "CLAUDE.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laptev/ds-halogen.git"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "ai-first",
+    "claude",
+    "vibe-coding"
+  ],
+  "author": "Alex Laptev <alexlaptev@gmail.com>",
+  "license": "MIT"
+}

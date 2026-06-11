@@ -1,0 +1,109 @@
+/* =====================================================================
+   HALOGEN — Design Tokens
+   Dark-mode-first design system for high-density creative software.
+   Import this file, then build on the CSS custom properties below.
+
+   Theming: tokens default to DARK. Set [data-theme="light"] on a
+   container (e.g. <html data-theme="light">) to switch to LIGHT.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   FONTS
+   Load these in your HTML <head> (or @import here if you prefer):
+   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800&family=VT323&display=swap" rel="stylesheet" />
+   --------------------------------------------------------------------- */
+
+:root {
+  /* ===================================================================
+     SURFACE SCALE — cool near-black with a hint of blue
+     ink-050 is the page floor; surfaces step up ~3% lightness per stop.
+     Never use pure black.
+     =================================================================== */
+  --ink-000: #050507;
+  --ink-050: #0a0b0e;   /* page */
+  --ink-100: #111216;   /* card */
+  --ink-150: #16181d;   /* inset */
+  --ink-200: #1c1f25;   /* elevated */
+  --ink-300: #262a32;
+  --ink-400: #3a3f4a;   /* line */
+  --ink-500: #565d6a;   /* muted text */
+  --ink-600: #7a818e;
+  --ink-700: #a9b0bb;   /* body text */
+  --ink-800: #d4d8df;
+  --ink-900: #f3f5f8;   /* headings */
+
+  /* ===================================================================
+     HAIRLINES — translucent so they ride on any surface
+     =================================================================== */
+  --line:        rgba(255, 255, 255, 0.06);
+  --line-strong: rgba(255, 255, 255, 0.12);
+  --line-bright: rgba(255, 255, 255, 0.22);
+
+  /* ===================================================================
+     ACCENTS — same chroma family, different hue.
+     Lime is the only "primary"; the rest carry semantic load.
+     Never combine more than two accents in a single component.
+     =================================================================== */
+  --lime:         #d6ff3a;   /* primary · CTAs · success · "go" state   oklch(94% .20 113) */
+  --lime-ink:     #14180a;   /* text/foreground on lime surfaces */
+  --magenta:      #ff2d7a;   /* promo · featured · time-bound · alert    oklch(68% .26 1) */
+  --magenta-deep: #6b0a30;
+  --cyan:         #5ee9ff;   /* info · tooltips · helper · meta          oklch(89% .14 220) */
+  --azure:        #3b6eff;   /* secondary · best-value · team plans      oklch(58% .22 263) */
+  --plum:         #a05cff;   /* decorative · hero gradients · "new"      oklch(67% .22 305) */
+
+  /* ===================================================================
+     TYPE FAMILIES
+     =================================================================== */
+  --t-display:  'VT323', 'IBM Plex Mono', monospace;          /* pixel terminal display */
+  --t-headline: 'Archivo', 'Helvetica Neue', sans-serif;      /* bold uppercase headings */
+  --t-body:     'Inter', 'Helvetica Neue', sans-serif;        /* prose, labels, UI */
+  --t-mono:     'Inter', 'Helvetica Neue', sans-serif;        /* legacy alias — points to Inter */
+
+  /* ===================================================================
+     RADIUS
+     =================================================================== */
+  --r-xs:   4px;
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   14px;
+  --r-xl:   20px;
+  --r-pill: 999px;
+
+  /* ===================================================================
+     SHADOWS & GLOWS
+     =================================================================== */
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.04) inset, 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-glow-lime:    0 0 0 1px var(--lime),    0 0 32px rgba(214, 255, 58, 0.35);
+  --shadow-glow-magenta: 0 0 0 1px var(--magenta), 0 0 32px rgba(255, 45, 122, 0.35);
+}
+
+/* =====================================================================
+   LIGHT MODE
+   Surface ramp inverts (ink-050 = page, ink-900 = headings stay darkest).
+   Accents are unchanged — they read well on both themes.
+   ===================================================================== */
+[data-theme="light"] {
+  --ink-000: #ffffff;
+  --ink-050: #f5f6f8;   /* page */
+  --ink-100: #ffffff;   /* card */
+  --ink-150: #fafafc;   /* inset */
+  --ink-200: #f1f2f5;   /* elevated */
+  --ink-300: #e4e5ea;
+  --ink-400: #c5c8cf;
+  --ink-500: #8c9099;
+  --ink-600: #6a6e77;
+  --ink-700: #3d4148;
+  --ink-800: #1c1f25;
+  --ink-900: #0a0b0e;
+
+  --line:        rgba(15, 18, 25, 0.08);
+  --line-strong: rgba(15, 18, 25, 0.14);
+  --line-bright: rgba(15, 18, 25, 0.24);
+
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 1px 2px rgba(15, 18, 25, 0.06);
+  --shadow-2: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 8px 24px rgba(15, 18, 25, 0.10);
+  --shadow-glow-lime:    0 0 0 1px var(--lime),    0 0 28px rgba(214, 255, 58, 0.45);
+  --shadow-glow-magenta: 0 0 0 1px var(--magenta), 0 0 28px rgba(255, 45, 122, 0.22);
+}

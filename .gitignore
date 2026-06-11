@@ -1,0 +1,9 @@
+# Local working files — not part of the published system
+.thumbnail
+uploads/
+screenshots/
+# Legacy root copy of tokens — canonical lives in assets/tokens.css
+/tokens.css
+node_modules/
+.DS_Store
+Thumbs.db
