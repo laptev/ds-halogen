@@ -31,3 +31,9 @@ Open the project in Claude and say:
 > Using the Halogen system in `design_systems/halogen`, build a generation dashboard for [your product].
 
 Halogen pairs well with [Ember](https://github.com/laptev/ds-ember) — same install pattern, both land in `design_systems/` side by side.
+
+## Origin & license
+
+Part of the AI-first design systems collection at **[alexlaptev.com](https://alexlaptev.com)**. The canonical, always-current version lives at its original location on the site: **https://alexlaptev.com/design_systems/halogen/**.
+
+Released under the **MIT License** — free to use, copy, modify, and ship in personal and commercial projects, no attribution required (though appreciated). See [`LICENSE`](LICENSE). © 2026 Alex Laptev.
