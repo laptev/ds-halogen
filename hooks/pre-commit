@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# pre-commit: validate bin/*.js syntax + package.json JSON before commit.
+#
+# A truncated string or unclosed bracket in bin/cli.js will publish to npm
+# and break `npx laptev/ds-<system> init` for everyone. This catches it
+# locally before the push.
+
+set -e
+FAIL=0
+
+# Syntax-check every JS file in bin/
+if [ -d "bin" ]; then
+  for f in bin/*.js; do
+    [ -f "$f" ] || continue
+    if ! node --check "$f" 2>&1 >/dev/null; then
+      echo ""
+      echo "❌ $f failed Node syntax check. Fix before committing."
+      FAIL=1
+    fi
+  done
+fi
+
+# Validate package.json parses
+if [ -f "package.json" ]; then
+  if ! node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))" 2>&1; then
+    echo "❌ package.json is not valid JSON. Fix before committing."
+    FAIL=1
+  fi
+fi
+
+if [ "$FAIL" -ne 0 ]; then
+  echo ""
+  echo "Bypass with: git commit --no-verify  (only if you know what you're doing)"
+  exit 1
+fi
+
+echo "✓ pre-commit: bin/*.js + package.json OK"

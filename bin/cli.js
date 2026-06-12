@@ -60,4 +60,6 @@ fs.writeFileSync(claudeMd, text);
 
 const rel = path.relative(process.cwd(), target) || ".";
 console.log(`✔ Halogen installed into ${rel}`);
-console.log("✔ Registered 
+console.log("✔ Registered in CLAUDE.md");
+console.log("\nNext: open this project in Claude (Cowork or Claude Code) and try:");
+console.log('  "Using the Halogen system in design_systems/halogen, build a generation dashboard for ..."');
